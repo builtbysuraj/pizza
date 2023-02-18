@@ -1,9 +1,24 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const SingleProduct = () => {
-  return (
-    <div>SingleProduct</div>
-  )
-}
+  const {id} = useParams();
+  const [product, setProduct] = useState({})
 
-export default SingleProduct
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .then(res => res.json())
+    .then(data => setProduct(data))
+  }, [])
+
+  return (
+    <div>
+      <Link to={"/"}>
+        <button className="">Back</button>
+      </Link>
+      <img src="/img/peproni.jpg" alt="" />
+    </div>
+  );
+};
+
+export default SingleProduct;
