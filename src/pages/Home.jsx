@@ -3,7 +3,7 @@ import Products from "./Products";
 const Home = () => {
   return (
     <>
-      <div className="hero py-16">
+      <main className="hero py-16">
         <div className="container flex items-center justify-between">
           <div className="w-1/2">
             <h6 className="text-lg">
@@ -18,8 +18,8 @@ const Home = () => {
             <img className="w-4/5" src="/img/pizza.png" alt="" />
           </div>
         </div>
-      </div>
-      <div>
+      </main>
+      <div className="mt-4">
         <Products />
       </div>
     </>
