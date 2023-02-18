@@ -3,7 +3,7 @@ import Navigaiton from "./components/Navigaiton";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Products from "./pages/Products";
-import SingleProduct from './pages/SingleProduct'
+import SingleProduct from "./pages/SingleProduct";
 
 const App = () => {
   return (
