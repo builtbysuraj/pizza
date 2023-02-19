@@ -1,20 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../Context";
 
 const SingleProduct = () => {
   const { product } = useContext(Context);
   const { id } = useParams();
-  const [allProduct, setAllProduct] = useState(null);
 
-  // useEffect(() => {
-  //   fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => setProduct(data));
-  // }, []);
-
-  // console.log(product[id-1].username)
-  // #23272f
   return (
     <div className="mt-12 container mx-auto">
       <Link to={"/"}>
