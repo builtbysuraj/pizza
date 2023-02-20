@@ -1,4 +1,4 @@
-const CartItem = ({name}) => {
+const CartItem = ({name, itemCount}) => {
   return (
     <div >
       <ul>
@@ -12,7 +12,7 @@ const CartItem = ({name}) => {
               <button className="bg-yellow-500 px-4 py-2 rounded-full leading-none">
                 <strong>-</strong>
               </button>
-              <b className="px-4">2</b>
+              <b className="px-4"> {itemCount} </b>
               <button className="bg-yellow-500 px-4 py-2 rounded-full leading-none">
                 <strong>+</strong>
               </button>
