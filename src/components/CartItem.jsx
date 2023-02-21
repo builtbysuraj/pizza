@@ -3,7 +3,7 @@ import { Context } from "../Context";
 
 const CartItem = ({ product, itemCount, cart }) => {
   const { setCart } = useContext(Context);
-  
+
   const increment = () => {
     const existingqty = cart.items[product.id];
     const _cart = { ...cart };
@@ -20,6 +20,14 @@ const CartItem = ({ product, itemCount, cart }) => {
       _cart.totalItems -= 1;
       setCart(_cart);
     }
+  };
+
+  const deleteItem = () => {
+    const _cart = { ...cart };
+    const qty = _cart.items[product.id];
+    delete _cart.items[product.id];
+    _cart.totalItems -= qty;
+    setCart(_cart);
   };
 
   return (
@@ -49,7 +57,10 @@ const CartItem = ({ product, itemCount, cart }) => {
               </button>
             </div>
             <div>₹ 500</div>
-            <button className="bg-red-500 px-4 py-2 rounded-full leading-none text-white">
+            <button
+              onClick={deleteItem}
+              className="bg-red-500 px-4 py-2 rounded-full leading-none text-white"
+            >
               Delete
             </button>
           </div>
