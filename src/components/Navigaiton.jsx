@@ -24,7 +24,7 @@ const Navigaiton = () => {
         </Link>
         <Link to={"/cart"} style={cartStyle}>
           <li className="flex items-center">
-            <span className="font-bold pr-2"> {cart.totalItems} </span>
+            <span className="font-bold pr-2"> {cart.totalItems ? cart.totalItems : 0} </span>
             <img src="/img/cart.png" alt="" />
           </li>
         </Link>
