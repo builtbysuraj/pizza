@@ -25,7 +25,7 @@ const App = () => {
   }, [cart]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://pizza-api-data.glitch.me/api/products")
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);

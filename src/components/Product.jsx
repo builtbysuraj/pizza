@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../Context";
 
-const Product = ({ name, id }) => {
+const Product = ({ name,image, size, id, price }) => {
   const { cart, setCart } = useContext(Context);
 
   const [isAdding, setIsAdding] = useState(false);
@@ -25,31 +25,31 @@ const Product = ({ name, id }) => {
     }
     _cart.totalItems += 1;
     setCart(_cart);
-    setIsAdding(true)
+    setIsAdding(true);
     setTimeout(() => {
-      setIsAdding(false)
-    }, 800)
+      setIsAdding(false);
+    }, 800);
   }
 
   return (
     <Link to={`/products/${id}`}>
-      <img src="/img/peproni.jpg" alt="pizza-products" />
+      <img src={image} alt="pizza-products" />
       <div className="text-center">
         <h2 className="text-lg py-2 font-bold">{name}</h2>
         <span className="bg-gray-200 rounded-full text-sm px-4 py-1">
-          small
+          {size}
         </span>
       </div>
       <div className="flex justify-between items-center mt-2">
-        <span>₹ 500</span>
+        <span>₹{price}</span>
         <button
-        disabled={isAdding}
+          disabled={isAdding}
           onClick={(e) => addCart(e)}
           className={` ${
             isAdding ? "bg-green-500" : "bg-yellow-500"
           } py-1 px-4 rounded-full font-bold `}
         >
-          Add{isAdding && 'ed'}
+          Add{isAdding && "ed"}
         </button>
       </div>
     </Link>
